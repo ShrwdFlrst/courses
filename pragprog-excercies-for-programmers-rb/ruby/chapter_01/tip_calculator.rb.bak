@@ -1,0 +1,25 @@
+# From http://blog.bigbinary.com/2009/07/04/stdout-sync-true-to-flush-output-immediately.html
+$stdout.sync = true
+
+def calculate_tip(bill, percentage)
+  ((bill / 100) * percentage).round(2)
+end
+
+def clean_float(string)
+  string.gsub(/[^0-9.]+/, '').to_f
+end
+
+def prompt()
+    puts "What is the bill? "
+    bill = clean_float(gets.chomp)
+    puts "What is the tip percentage?"
+    percentage = clean_float(gets.chomp)
+
+    tip = calculate_tip(bill, percentage)
+    total = tip + bill
+
+    puts "The tip is $#{tip}"
+    puts "The total is $#{total}"
+end
+
+prompt()
