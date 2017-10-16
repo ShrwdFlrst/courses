@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"./api"
+	"api"
 )
 
 func main() {
